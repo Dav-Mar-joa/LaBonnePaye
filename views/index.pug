@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap")
+    link(rel="stylesheet", href="/css/styles.css")
+    script(src="/js/script.js")
+  body
+    h1 La Bonne Paye
+    .container
+      form(action="/submit" method="post")
+        // Ligne pour "Qui ?" et "Date"
+        .form-row
+          p Qui ?
+          p Date :
+        .form-row
+          label(for="name") 
+          select(name="name" id="name")
+            option(value="") 
+            option(value="Lola") Lola
+            option(value="David") David
+
+          label(for="date") 
+          input(type="date" id="date" name="date" required)
+
+        // Champ de texte pour la somme
+        .form-row
+          label(for="somme") Somme :
+          input(type="somme" id="somme" name="somme" required placeholder="Entrez la somme : ")
+
+        // Champ de textearea pour un message
+        label(for="description") Description :
+        textarea(id="description" name="description" rows="1" placeholder="Écrivez votre message ici...")
+
+        // Bouton de soumission
+        button(type="submit") Ok

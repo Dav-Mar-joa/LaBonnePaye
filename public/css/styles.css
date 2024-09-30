@@ -1,0 +1,84 @@
+/* Styles généraux */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #2a2a2a; /* Fond sombre pour le contraste */
+    color: #ffffff; /* Couleur du texte blanc */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Titre */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #00ffcc; /* Couleur pastel pour le titre */
+}
+
+/* Conteneur */
+.container {
+    max-width: 30%; /* Largeur maximale du formulaire */
+    margin: auto; /* Centrage du formulaire */
+    padding: 20px;
+    background-color: #444; /* Fond du conteneur */
+    border-radius: 10px; /* Arrondi des coins */
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Ombre légère */
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #00ffcc; /* Couleur pastel pour les labels */
+}
+
+/* Alignement horizontal pour les champs de formulaire */
+.form-row {
+    display: flex; /* Utilisation de flexbox */
+    justify-content: space-between; /* Espace entre les éléments */
+    margin-bottom: 15px; /* Marge entre les lignes */
+}
+
+/* Champs de formulaire */
+input[type="text"],
+input[type="somme"],
+input[type="date"], /* Ajoutez cette ligne */
+textarea,
+select {
+    width: 100%; /* Largeur à 100% */
+    padding: 10px; /* Espacement interne */
+    border: 2px solid #00ffcc; /* Bordure pastel */
+    border-radius: 5px; /* Arrondi des coins */
+    background-color: #333; /* Fond sombre pour les champs */
+    color: #ffffff; /* Texte blanc */
+}
+
+select,
+input[type="somme"],input[type="date"] {
+    width: 30%; /* Largeur des champs spécifiques */
+}
+textarea{
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+}
+.p-qui{
+    padding-left: 10%;
+}
+
+/* Style pour le bouton */
+button {
+    background-color: #00ffcc; /* Couleur du bouton */
+    color: #000000; /* Texte noir */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Arrondi des coins */
+    padding: 10px 15px; /* Espacement interne */
+    cursor: pointer; /* Changement de curseur au survol */
+    font-size: 1rem;
+    transition: background-color 0.3s; /* Transition douce */
+}
+
+/* Effet de survol pour le bouton */
+button:hover {
+    background-color: #00cc99; /* Couleur plus sombre au survol */
+}
