@@ -16,7 +16,7 @@ h1 {
 
 /* Conteneur */
 .container {
-    max-width: 30%; /* Largeur maximale du formulaire */
+    max-width: 60%; /* Largeur maximale du formulaire */
     margin: auto; /* Centrage du formulaire */
     padding: 20px;
     background-color: #444; /* Fond du conteneur */
@@ -82,3 +82,9 @@ button {
 button:hover {
     background-color: #00cc99; /* Couleur plus sombre au survol */
 }
+
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Colonne sur petits écrans */
+    }
+  }
