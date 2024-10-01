@@ -21,10 +21,11 @@ html
           input(type="date" id="date" name="date" required)
 
       .form-row
-        label(for="somme") Somme :
-        input(type="somme" id="somme" name="somme" required placeholder="Entrez la somme :")
-
-      label(for="description") Description :
-      textarea(id="description" name="description" rows="1" placeholder="Écrivez votre message ici...")
+        .p-somme
+          label(for="somme") Somme :
+          input(type="somme" id="somme" name="somme" required placeholder="Entrez la somme :")
+      .p-description
+        label(for="description") Description :
+        textarea(id="description" name="description" rows="1" placeholder="Écrivez votre message ici...")
 
       button(type="submit") Ok

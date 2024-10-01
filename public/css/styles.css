@@ -9,7 +9,7 @@ body {
 
 /* Titre */
 h1 {
-    margin-top: 8%;
+    margin-top: 12%;
     margin-bottom: 8%;
     text-align: center;
     font-size: 4rem; /* Agrandir le titre */
@@ -33,7 +33,7 @@ h1 {
     margin-bottom: 20px; /* Plus d'espace entre les lignes */
 }
 
-.p-qui, .p-date, .p-somme {
+.p-qui, .p-date, .p-somme,.p-description {
     font-size: 2.7rem; /* Augmentation de la taille du texte des labels */
     margin: 4%;
     text-align: center;
@@ -47,20 +47,15 @@ label {
     color: #00ffcc;
 }
 
-input, select, textarea {
+input, select, textarea{
     margin: 8%;
-    width: 50%; /* Champs plus larges */
+    width: 60%; /* Champs plus larges */
     padding: 15px; /* Plus d'espace interne dans les champs */
     border: 2px solid #00ffcc;
     border-radius: 5px;
     background-color: #333;
     color: #ffffff;
     font-size: 1.5rem; /* Texte plus grand dans les champs */
-}
-
-textarea {
-    width: 100%;
-    margin-top: 20px;
 }
 
 /* Adaptation mobile */
