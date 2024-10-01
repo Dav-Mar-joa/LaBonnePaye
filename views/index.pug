@@ -9,28 +9,22 @@ html
     h1 La Bonne Paye
     .container
       form(action="/submit" method="post")
-        // Ligne pour "Qui ?" et "Date"
-        .form-row
-          p Qui ?
-          p Date :
-        .form-row
-          label(for="name") 
+      .form-row
+        .p-qui
+          label(for="name") Qui ? 
           select(name="name" id="name")
             option(value="") 
             option(value="Lola") Lola
             option(value="David") David
-
-          label(for="date") 
+        .p-date
+          label(for="date") Date :
           input(type="date" id="date" name="date" required)
 
-        // Champ de texte pour la somme
-        .form-row
-          label(for="somme") Somme :
-          input(type="somme" id="somme" name="somme" required placeholder="Entrez la somme : ")
+      .form-row
+        label(for="somme") Somme :
+        input(type="somme" id="somme" name="somme" required placeholder="Entrez la somme :")
 
-        // Champ de textearea pour un message
-        label(for="description") Description :
-        textarea(id="description" name="description" rows="1" placeholder="Écrivez votre message ici...")
+      label(for="description") Description :
+      textarea(id="description" name="description" rows="3" placeholder="Écrivez votre message ici...")
 
-        // Bouton de soumission
-        button(type="submit") Ok
+      button(type="submit") Ok
