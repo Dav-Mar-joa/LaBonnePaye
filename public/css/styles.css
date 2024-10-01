@@ -9,13 +9,13 @@ body {
 /* Titre */
 h1 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #00ffcc;
 }
 
 /* Conteneur */
 .container {
-    max-width: 60%;
+    max-width: 40%;
     margin: auto;
     padding: 20px;
     background-color: #444;
@@ -26,11 +26,15 @@ h1 {
 /* Alignement horizontal pour Qui et Date */
 .form-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* justify-content: space-between; */
     margin-bottom: 15px;
 }
 
-.p-qui, .p-date {
+.p-qui, .p-date,.p-somme {
+    font-size: 1.2rem;
+    margin: 2%;
+    text-align: center;
     flex: 1;
 }
 
@@ -42,7 +46,8 @@ label {
 }
 
 input, select, textarea {
-    width: 100%;
+    margin: 2%;
+    width: 40%;
     padding: 10px;
     border: 2px solid #00ffcc;
     border-radius: 5px;
@@ -74,7 +79,7 @@ button {
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.5rem;
     transition: background-color 0.3s;
 }
 
