@@ -1,10 +1,10 @@
 {
-    "name": "ToDoList",
-    "short_name": "ToDoList",
+    "name": "LaBonnePaye",
+    "short_name": "LBP",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#333333",
-    "theme_color": "#007bff",
+    "background_color": "#ff0000",
+    "theme_color": "#ff0000",
     "description": "Une brève description de ton application",
     "icons": [
       {
