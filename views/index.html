@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/script.js"></script>
+</head>
+
+<body>
+    <h1>La Bonne Paye</h1>
+    <div class="container">
+        <form action="/payement" method="post">
+            <div class="form-row">
+                <div class="p-qui"><label for="name">A payé  </label><select name="name" id="name" style="font-size:1.5rem; text-align:center" required><option value=""> </option><option value="Lola">Lola</option><option value="David">David</option></select></div>
+                <div class="p-date"><label for="date">Date</label><input type="date" id="date" name="date" style="font-size:1.5rem; text-align:center"></div>
+            </div>
+            <div class="form-row">
+                <div class="p-somme"><label for="somme">Somme</label><input type="number" id="somme" name="somme" required style="font-size:1.5rem; text-align:center" placeholder="Entrez la somme :"></div>
+            </div>
+            <div class="p-description"><label for="description">Description</label><textarea id="description" name="description" rows="1" style="font-size:1.5rem; text-align:center"></textarea></div><button type="submit">Vazy !</button></form>
+    </div>
+    <div class="containerSomme">
+        <div class="form-row">
+            <div class="p-sommeDu">
+                <p id="lola"> </p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="p-sommeDu">
+                <p id="david"> </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
