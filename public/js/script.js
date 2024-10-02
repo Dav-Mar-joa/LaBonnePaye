@@ -17,14 +17,14 @@ fetch('/total')
         if(payementDu[0] > payementDu[1]) {
             var doitPayer = payementDu[0] - payementDu[1];
             document.getElementById('david').innerText = `David doit : ${doitPayer} €`;
-            document.getElementById('lola').innerText = `0 €`;
+            document.getElementById('lola').innerText = `Lola est zen !! `;
         } else if(payementDu[0] < payementDu[1]) {
             var doitPayer = payementDu[1] - payementDu[0];
             document.getElementById('lola').innerText = `Lola doit : ${doitPayer} €`;
-            document.getElementById('david').innerText = `0 €`;
+            document.getElementById('david').innerText = `David est zen !!`;
         } else if(payementDu[0] === payementDu[1]) { 
-            document.getElementById('david').innerText = `On est pas mal !! `;
-            document.getElementById('lola').innerText = `Les comptes sont OK !!! `;
+            // document.getElementById('david').innerText = ` `;
+            document.getElementById('lola').innerText = `On est pas mal !!! `;
         }
       });
     })

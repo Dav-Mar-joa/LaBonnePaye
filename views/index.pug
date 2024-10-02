@@ -11,22 +11,22 @@ html
       form(action="/payement" method="post")
         .form-row
           .p-qui
-            label(for="name") Qui ? 
-            select(name="name" id="name")
+            label(for="name") A payer 
+            select(name="name" id="name" style="font-size:1.5rem")
               option(value="") 
               option(value="Lola") Lola
               option(value="David") David
           .p-date
             label(for="date") Date
-            input(type="date" id="date" name="date" required)
+            input(type="date" id="date" name="date" style="font-size:1.5rem" required)
 
         .form-row
           .p-somme
             label(for="somme") Somme
-            input(type="number" id="somme" name="somme" required placeholder="Entrez la somme :")
+            input(type="number" id="somme" name="somme" required style="font-size:1.5rem" placeholder="Entrez la somme :")
         .p-description
           label(for="description") Description
-          textarea(id="description" name="description" rows="1" placeholder="Écrivez votre message ici...")
+          textarea(id="description" name="description" rows="1" style="font-size:1.5rem" placeholder="Écrivez votre message ici...")
 
         button(type="submit") Vazy !
     .containerSomme 
