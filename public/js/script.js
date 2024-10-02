@@ -1,5 +1,10 @@
 window.onload = function() {
 
+const today = new Date().toISOString().split('T')[0]; // Format YYYY-MM-DD
+
+    // Préremplir le champ de type 'date' avec la date actuelle
+document.getElementById('date').value = today;
+
     var payementDu = [0, 0];
 
     // Récupérer les données depuis le serveur
