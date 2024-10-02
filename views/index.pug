@@ -8,32 +8,31 @@ html
   body
     h1 La Bonne Paye
     .container
-      form(action="/submit" method="post")
-      .form-row
-        .p-qui
-          label(for="name") Qui ? 
-          select(name="name" id="name")
-            option(value="") 
-            option(value="Lola") Lola
-            option(value="David") David
-        .p-date
-          label(for="date") Date
-          input(type="date" id="date" name="date" required)
+      form(action="/payement" method="post")
+        .form-row
+          .p-qui
+            label(for="name") Qui ? 
+            select(name="name" id="name")
+              option(value="") 
+              option(value="Lola") Lola
+              option(value="David") David
+          .p-date
+            label(for="date") Date
+            input(type="date" id="date" name="date" required)
 
-      .form-row
-        .p-somme
-          label(for="somme") Somme
-          input(type="number" id="somme" name="somme" required placeholder="Entrez la somme :")
-      .p-description
-        label(for="description") Description
-        textarea(id="description" name="description" rows="1" placeholder="Écrivez votre message ici...")
+        .form-row
+          .p-somme
+            label(for="somme") Somme
+            input(type="number" id="somme" name="somme" required placeholder="Entrez la somme :")
+        .p-description
+          label(for="description") Description
+          textarea(id="description" name="description" rows="1" placeholder="Écrivez votre message ici...")
 
-      button(type="submit") Vazy !
+        button(type="submit") Vazy !
     .containerSomme 
       .form-row
         .p-sommeDu
-          p Lola doit : 100 €
-          
+          p#lola 
       .form-row
         .p-sommeDu
-          p David doit : 200 €
+          p#david 
