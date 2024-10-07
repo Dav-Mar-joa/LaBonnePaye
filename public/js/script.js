@@ -57,7 +57,7 @@ document.getElementById('date').value = today;
             historiqueContainer.innerHTML = ''; // Effacer le contenu existant
 
             if (data.length === 0) {
-                historiqueContainer.innerHTML = '<p>Aucun paiement trouvé pour David ce mois-ci.</p>';
+                historiqueContainer.innerHTML = '';
             } else {
                 data.forEach(entry => {
                     const entryElement = document.createElement('div');
