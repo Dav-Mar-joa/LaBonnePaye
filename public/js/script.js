@@ -95,5 +95,14 @@ document.getElementById('date').value = today;
                 });
             }
         })
-        .catch(error => console.error('Erreur:', error));   
+        .catch(error => console.error('Erreur:', error));  
+        
+        document.getElementById("toggle-historique").onclick = function() {
+            const historiqueDiv = document.getElementById("container-historique");
+            if (historiqueDiv.style.display === "none" || historiqueDiv.style.display === "") {
+                historiqueDiv.style.display = "block"; // Afficher
+            } else {
+                historiqueDiv.style.display = "none"; // Cacher
+            }
+        };
 };

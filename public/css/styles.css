@@ -25,6 +25,15 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 204, 0.5); /* Ombre plus large */
 }
+.container-historique {
+    display:none;
+    max-width: 80%; /* Augmentation de la largeur du conteneur */
+    margin: auto;
+    padding: 40px; /* Augmentation du padding */
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5); /* Ombre plus large */
+}
 .containerSomme{
     max-width: 80%; /* Augmentation de la largeur du conteneur */
     margin-top: 5%;
@@ -110,4 +119,11 @@ button:hover {
 }
 #historique-david, #historique-lola{
     font-size: 1.9rem;
+}
+.bouton-historique{ 
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    background-color: #ffffff;
+    color: black;
 }
