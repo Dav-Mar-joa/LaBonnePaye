@@ -73,6 +73,7 @@ document.getElementById('date').value = today;
             }
         })
         .catch(error => console.error('Erreur:', error)); 
+
         fetch('/historique/lola')
         .then(response => response.json())
         .then(data => {
@@ -101,8 +102,12 @@ document.getElementById('date').value = today;
             const historiqueDiv = document.getElementById("container-historique");
             if (historiqueDiv.style.display === "none" || historiqueDiv.style.display === "") {
                 historiqueDiv.style.display = "block"; // Afficher
+                this.style.backgroundColor = "#00ffcc";
+                this.style.color = "black";
             } else {
                 historiqueDiv.style.display = "none"; // Cacher
+                this.style.backgroundColor = "white";
+                this.style.color = "black";
             }
         };
 };

@@ -61,6 +61,7 @@ h1 {
     flex: 1;
 }
 
+
 label {
     display: block;
     margin-bottom: 8px;
@@ -127,3 +128,7 @@ button:hover {
     background-color: #ffffff;
     color: black;
 }
+.qui-historique{
+    font-size: 3.2rem;
+}
+
