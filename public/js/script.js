@@ -63,7 +63,7 @@ document.getElementById('date').value = today;
                     const entryElement = document.createElement('div');
                     entryElement.classList.add('historique-entry');
                     entryElement.innerHTML = `
-                        <p>-------------</p>
+                        <p>-------</p>
                         <p>${new Date(entry.date).toLocaleDateString()}</p>
                         <p> ${entry.description}</p>
                         <p>Somme : ${entry.somme} €</p>
@@ -86,7 +86,7 @@ document.getElementById('date').value = today;
                     const entryElement = document.createElement('div');
                     entryElement.classList.add('historique-entry');
                     entryElement.innerHTML = `
-                        <p>-------------</p>
+                        <p>-------</p>
                         <p>${new Date(entry.date).toLocaleDateString()}</p>
                         <p> ${entry.description}</p>
                         <p>Somme : ${entry.somme} €</p>
