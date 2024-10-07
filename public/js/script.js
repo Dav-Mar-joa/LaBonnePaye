@@ -49,4 +49,51 @@ document.getElementById('date').value = today;
             }
         })
         .catch(error => console.error('Erreur:', error));
+
+        fetch('/historique/david')
+        .then(response => response.json())
+        .then(data => {
+            const historiqueContainer = document.getElementById('historique-david');
+            historiqueContainer.innerHTML = ''; // Effacer le contenu existant
+
+            if (data.length === 0) {
+                historiqueContainer.innerHTML = '<p>Aucun paiement trouvé pour David ce mois-ci.</p>';
+            } else {
+                data.forEach(entry => {
+                    const entryElement = document.createElement('div');
+                    entryElement.classList.add('historique-entry');
+                    entryElement.innerHTML = `
+                        <p>-------------</p>
+                        <p>${new Date(entry.date).toLocaleDateString()}</p>
+                        <p> ${entry.description}</p>
+                        <p>Somme : ${entry.somme} €</p>
+                    `;
+                    historiqueContainer.appendChild(entryElement);
+                });
+            }
+        })
+        .catch(error => console.error('Erreur:', error)); 
+        fetch('/historique/lola')
+        .then(response => response.json())
+        .then(data => {
+            const historiqueContainer = document.getElementById('historique-lola');
+            historiqueContainer.innerHTML = ''; // Effacer le contenu existant
+
+            if (data.length === 0) {
+                historiqueContainer.innerHTML = '<p>Aucun paiement trouvé pour David ce mois-ci.</p>';
+            } else {
+                data.forEach(entry => {
+                    const entryElement = document.createElement('div');
+                    entryElement.classList.add('historique-entry');
+                    entryElement.innerHTML = `
+                        <p>-------------</p>
+                        <p>${new Date(entry.date).toLocaleDateString()}</p>
+                        <p> ${entry.description}</p>
+                        <p>Somme : ${entry.somme} €</p>
+                    `;
+                    historiqueContainer.appendChild(entryElement);
+                });
+            }
+        })
+        .catch(error => console.error('Erreur:', error));   
 };

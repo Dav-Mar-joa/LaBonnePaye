@@ -41,7 +41,7 @@ app.post('/payement', async (req, res) => {
     const payement = {
         name: req.body.name ,
         date: new Date(req.body.date), 
-        description: req.body.description || "Aucune description",
+        description: req.body.description,
         somme: parseFloat(req.body.somme) 
     };
 
@@ -76,6 +76,56 @@ app.get('/total', async (req, res) => {
         res.json(result); // Envoyer le résultat sous forme JSON
     } catch (err) {
         console.error('Erreur lors de l\'agrégation :', err);
+        res.status(500).send('Erreur lors de la récupération des données');
+    }
+});
+
+app.get('/historique/david', async (req, res) => {
+    try {
+        const collection = db.collection(process.env.MONGODB_COLLECTION);
+
+        const currentDate = new Date();
+        const startOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const endOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+
+        // Récupérer tous les paiements de David pour le mois en cours
+        const result = await collection.find({
+            name: "David",
+            date: {
+                $gte: startOfMonth,
+                $lt: endOfMonth
+            }
+        }).toArray();
+
+        console.log("Historique des paiements de David pour le mois en cours :", result);
+        res.json(result); // Envoyer tous les paiements sous forme JSON
+    } catch (err) {
+        console.error('Erreur lors de la récupération de l\'historique :', err);
+        res.status(500).send('Erreur lors de la récupération des données');
+    }
+});
+
+app.get('/historique/lola', async (req, res) => {
+    try {
+        const collection = db.collection(process.env.MONGODB_COLLECTION);
+
+        const currentDate = new Date();
+        const startOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const endOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+
+        // Récupérer tous les paiements de David pour le mois en cours
+        const result = await collection.find({
+            name: "Lola",
+            date: {
+                $gte: startOfMonth,
+                $lt: endOfMonth
+            }
+        }).toArray();
+
+        console.log("Historique des paiements de David pour le mois en cours :", result);
+        res.json(result); // Envoyer tous les paiements sous forme JSON
+    } catch (err) {
+        console.error('Erreur lors de la récupération de l\'historique :', err);
         res.status(500).send('Erreur lors de la récupération des données');
     }
 });
