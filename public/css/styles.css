@@ -108,6 +108,6 @@ button:hover {
     border-radius: 10px;
     border : 2px solid black;
 }
-#historique-david {
-    font-size: 1.5rem;
+#historique-david, #historique-lola{
+    font-size: 1.9rem;
 }
