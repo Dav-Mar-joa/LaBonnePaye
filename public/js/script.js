@@ -38,11 +38,13 @@ document.getElementById('date').value = today;
                 document.getElementById('david').style.display = "block";
                 document.getElementById('david').innerText = `David doit : ${doitPayer} €`;
                 document.getElementById('lola').innerText = `Lola est zen !!`;
+                document.getElementById('p-sommeDu-lola').style.background = "white";
             } else if (payementDu[0] < payementDu[1]) {
                 var doitPayer = payementDu[1] - payementDu[0];
                 document.getElementById('david').style.display = "block";
                 document.getElementById('lola').innerText = `Lola doit : ${doitPayer} €`;
                 document.getElementById('david').innerText = `David est zen !!`;
+                document.getElementById('p-sommeDu-david').style.background = "white";
             } else if (payementDu[0] === payementDu[1]) {
                 document.getElementById('lola').innerText = `On est pas mal !!!`;
                 document.getElementById('david').style.display = "none";

@@ -124,7 +124,19 @@ button:hover {
 }
 
 /* ------ SOMMES AFFICHÉES ------ */
-.p-sommeDu {
+#p-sommeDu-david {
+    font-size: 1.8rem; /* +++ */
+    background-color: #00ffcc;
+    color: #000;
+    padding: 15px 25px;
+    padding-top: 0%  ;
+    padding-bottom: 0%;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 2rem;
+}
+#p-sommeDu-lola {
     font-size: 1.8rem; /* +++ */
     background-color: #00ffcc;
     color: #000;
