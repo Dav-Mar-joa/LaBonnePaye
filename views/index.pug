@@ -23,7 +23,8 @@ html
         .form-row
           .p-somme
             label(for="somme") Somme
-            input(type="number" id="somme" name="somme" required style="font-size:1.5rem; text-align:center" placeholder="Entrez la somme :")
+            input(type="number" id="somme" name="somme"
+            step="0.01" required style="font-size:1.5rem; text-align:center" placeholder="Entrez la somme :")
         .p-description
           label(for="description") Description
           textarea(id="description" name="description" rows="1" style="font-size:1.5rem; text-align:center")
