@@ -1,134 +1,176 @@
+/* ------ GLOBAL ------ */
 body {
     font-family: 'Press Start 2P', cursive;
-    background-color: #2a2a2a;
+    background-color: #1f1f1f;
     color: #ffffff;
     margin: 0;
     padding: 20px;
-    font-size: 1.2rem; /* Augmentation de la taille du texte global */
+    font-size: 1.4rem; /* +++ */
 }
 
-/* Titre */
+/* ------ TITRE ------ */
 h1 {
-    margin-top: 12%;
-    margin-bottom: 15%;
+    margin: 8% auto 10%;
     text-align: center;
-    font-size: 4rem; /* Agrandir le titre */
+    font-size: 4.2rem; /* +++ */
     color: #00ffcc;
+    text-shadow: 0 0 8px #00ffcc;
 }
 
-/* Conteneur */
-.container {
-    max-width: 80%; /* Augmentation de la largeur du conteneur */
-    margin: auto;
-    padding: 40px; /* Augmentation du padding */
-    background-color: #444;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5); /* Ombre plus large */
+/* ------ CONTENEURS ------ */
+.container,
+.container-historique,
+.containerSomme {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #2e2e2e;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0, 255, 204, 0.3);
 }
-.container-historique {
-    display:none;
-    max-width: 80%; /* Augmentation de la largeur du conteneur */
-    margin: auto;
-    padding: 40px; /* Augmentation du padding */
-    background-color: #444;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5); /* Ombre plus large */
-}
-.containerSomme{
-    max-width: 80%; /* Augmentation de la largeur du conteneur */
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    padding:2%;
+.containerSomme {
+    margin: 8% ;
     padding-left: 40px;
-    padding-right: 40px; /* Augmentation du padding */
-    /* background-color: #a09a9a;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);  */
+    padding-right: 40px;
 }
 
-/* Alignement horizontal pour Qui et Date */
+.container-historique {
+    margin: 8% ;
+    font-size: 1.2rem;
+
+}
+.container {
+    margin: 8% ;
+
+}
+
+.container-historique p{
+    font-size: 1.8rem;
+
+}
+
+/* ------ FORM ROW ------ */
 .form-row {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 20px; /* Plus d'espace entre les lignes */
+    gap: 25px;
+    margin-bottom: 28px;
+}
+.form-row-historique {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 28px;
+    font-size: 1rem;
 }
 
-.p-qui, .p-date, .p-somme,.p-description {
-    font-size: 2.7rem; /* Augmentation de la taille du texte des labels */
-    margin: 4%;
-    text-align: center;
+.p-qui, .p-date, .p-somme, .p-description {
     flex: 1;
+    text-align: center;
 }
-
 
 label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-size: 2.2rem; /* +++ */
     color: #00ffcc;
 }
 
-input, select, textarea{
-    margin: 8%;
-    width: 70%; /* Champs plus larges */
-    padding: 15px; /* Plus d'espace interne dans les champs */
+/* ------ INPUTS ------ */
+input, select, textarea {
+    width: 80%;
+    padding: 18px;
     border: 2px solid #00ffcc;
-    border-radius: 5px;
-    background-color: #333;
+    border-radius: 6px;
+    background-color: #1c1c1c;
     color: #ffffff;
-    font-size: 1.5rem; /* Texte plus grand dans les champs */
+    font-size: 1.7rem; /* +++ */
+    text-align: center;
 }
 
-/* Adaptation mobile */
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-    }
-
-    .p-qui, .p-date {
-        width: 100%;
-    }
+textarea {
+    resize: none;
 }
 
-/* Bouton */
+/* ------ BOUTONS ------ */
 button {
     font-family: 'Press Start 2P', cursive;
     background-color: #00ffcc;
     color: #000000;
     border: none;
-    border-radius: 5px;
-    padding: 15px 20px; /* Agrandir le bouton */
+    border-radius: 6px;
+    padding: 22px 28px; /* +++ */
     cursor: pointer;
-    font-size: 2rem; /* Texte plus grand dans le bouton */
-    transition: background-color 0.3s;
+    font-size: 2.2rem; /* +++ */
+    display: block;
+    margin: 45px auto 0;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #00cc99;
+    background-color: #00cfa5;
+    transform: scale(1.04);
+}
 
-}
-.p-sommeDu{
-    font-size: 1.6rem;
-    background-color: #00ffcc;
-    color: black;
-    margin-top: 2%;
-    padding-left: 4%;
-    padding-right: 4%;
-    border-radius: 10px;
-    border : 2px solid black;
-}
-#historique-david, #historique-lola{
-    font-size: 1.9rem;
-}
-.bouton-historique{ 
-    margin-top: 10%;
-    margin-bottom: 5%;
-    margin-left: 10%;
+/* Bouton historique */
+.bouton-historique {
     background-color: #ffffff;
-    color: black;
-}
-.qui-historique{
-    font-size: 3.2rem;
+    color: #000000;
+    margin: 6% auto;
 }
 
+/* ------ SOMMES AFFICHÉES ------ */
+.p-sommeDu {
+    font-size: 1.6rem; /* +++ */
+    background-color: #00ffcc;
+    color: #000;
+    padding: 15px 25px;
+    padding-top: 0%  ;
+    padding-bottom: 0%;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 2rem;
+}
+p {
+    line-height: 2.8rem; /* espace entre lignes ++ */
+}
+
+/* ------ HISTORIQUE ------ */
+#historique-david, #historique-lola {
+    font-size: 1.8rem; /* +++ */
+}
+
+.qui-historique {
+    font-size: 2.8rem; /* +++ */
+    color: #00ffcc;
+    text-align: center;
+}
+
+
+/* ------ RESPONSIVE ------ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.2rem;
+        margin-top: 20%;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        font-size: 1.8rem;
+        padding: 18px;
+    }
+
+    .qui-historique {
+        font-size: 2.2rem;
+    }
+}
