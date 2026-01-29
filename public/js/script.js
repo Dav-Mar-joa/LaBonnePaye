@@ -34,13 +34,13 @@ document.getElementById('date').value = today;
 
             // Mettre à jour l'affichage
             if (payementDu[0] > payementDu[1]) {
-                var doitPayer = payementDu[0] - payementDu[1];
+                var doitPayer = Math.round((payementDu[0] - payementDu[1]) * 100) / 100;
                 document.getElementById('david').style.display = "block";
                 document.getElementById('david').innerText = `David doit : ${doitPayer} €`;
                 document.getElementById('lola').innerText = `Lola est zen !!`;
                 document.getElementById('p-sommeDu-lola').style.background = "white";
             } else if (payementDu[0] < payementDu[1]) {
-                var doitPayer = payementDu[1] - payementDu[0];
+                var doitPayer = Math.round((payementDu[1] - payementDu[0]) * 100) / 100;
                 document.getElementById('david').style.display = "block";
                 document.getElementById('lola').innerText = `Lola doit : ${doitPayer} €`;
                 document.getElementById('david').innerText = `David est zen !!`;
