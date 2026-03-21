@@ -130,6 +130,10 @@ app.get('/historique/lola', async (req, res) => {
     }
 });
 
+app.get('/wake', (req, res) => {
+  res.status(200).json({ status: 'ok', time: new Date().toISOString() });
+});
+
 app.listen(port, () => {
     console.log(`Serveur lancé sur le port : ${port}`);
 });
