@@ -1,38 +1,119 @@
-<!DOCTYPE html>
-<html>
+doctype html
+html
+  head
+    title La Bonne Paye
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap")
+    link(rel="stylesheet", href="/css/styles.css")
+    link(rel="manifest", href="/manifest.json")
+  body
+    header
+      h1 La Bonne Paye
 
-<head>
-    <title></title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap">
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+    nav.tabs
+      button.tab-btn.active(data-tab="tab-paye") 💸 Paye
+      button.tab-btn(data-tab="tab-ticket") 🧾 Ticket
 
-<body>
-    <h1>La Bonne Paye</h1>
-    <div class="container">
-        <form action="/payement" method="post">
-            <div class="form-row">
-                <div class="p-qui"><label for="name">A payé  </label><select name="name" id="name" style="font-size:1.5rem; text-align:center" required><option value=""> </option><option value="Lola">Lola</option><option value="David">David</option></select></div>
-                <div class="p-date"><label for="date">Date</label><input type="date" id="date" name="date" style="font-size:1.5rem; text-align:center"></div>
-            </div>
-            <div class="form-row">
-                <div class="p-somme"><label for="somme">Somme</label><input type="number" id="somme" name="somme" required style="font-size:1.5rem; text-align:center" placeholder="Entrez la somme :"></div>
-            </div>
-            <div class="p-description"><label for="description">Description</label><textarea id="description" name="description" rows="1" style="font-size:1.5rem; text-align:center"></textarea></div><button type="submit">Vazy !</button></form>
-    </div>
-    <div class="containerSomme">
-        <div class="form-row">
-            <div class="p-sommeDu">
-                <p id="lola"> </p>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="p-sommeDu">
-                <p id="david"> </p>
-            </div>
-        </div>
-    </div>
-    <script src="/js/script.js"></script>
-</body>
+    main
 
-</html>
+      //- ===== ONGLET 1 : PAYE =====
+      section#tab-paye.tab-content.active
+
+        .card
+          form(action="/payement" method="post")
+            .form-grid
+              .field
+                label(for="name") A payé
+                select(name="name" id="name" required)
+                  option(value="") —
+                  option(value="Lola") Lola
+                  option(value="David") David
+              .field
+                label(for="date") Date
+                input(type="date" id="date" name="date")
+
+            .field
+              label(for="somme") Somme (€)
+              input(type="number" id="somme" name="somme" step="0.01" required placeholder="0.00")
+
+            .field
+              label(for="description") Description
+              textarea(id="description" name="description" rows="2" placeholder="Courses, restaurant...")
+
+            button.btn-primary(type="submit") Vazy !
+
+        .balances
+          .balance-card#p-sommeDu-lola
+            p#lola &nbsp;
+          .balance-card#p-sommeDu-david
+            p#david &nbsp;
+
+        button.btn-ghost#toggle-historique(type="button") 📋 Historique du mois
+        .historique-wrapper#container-historique
+          .historique-cols
+            .historique-col
+              h3.col-title Lola
+              #historique-david
+            .historique-col
+              h3.col-title David
+              #historique-lola
+
+      //- ===== ONGLET 2 : TICKET =====
+      section#tab-ticket.tab-content
+
+        .card
+          .form-grid
+            .field
+              label(for="ticket-name") Qui a payé
+              select(id="ticket-name")
+                option(value="") —
+                option(value="Lola") Lola
+                option(value="David") David
+            .field
+              label(for="ticket-date") Date
+              input(type="date" id="ticket-date")
+
+          .field
+            label(for="ticket-desc") Description
+            input(type="text" id="ticket-desc" placeholder="Ex: Courses Monoprix")
+
+        .card
+          h2.section-title Lignes du ticket
+          .add-line-row
+            input(type="text" id="line-label" placeholder="Article...")
+            input(type="number" id="line-price" placeholder="Prix €" step="0.01" min="0")
+            label.checkbox-wrap
+              input(type="checkbox" id="line-split")
+              span.checkbox-label ÷2
+            button.btn-add#add-line(type="button") +
+
+          table#ticket-table
+            thead
+              tr
+                th Article
+                th Prix
+                th ÷2
+                th
+            tbody#ticket-body
+              tr#ticket-empty
+                td(colspan="4") Ajoutez des articles
+
+          .ticket-totals
+            .total-line
+              span Total brut
+              span#total-brut 0.00 €
+            .total-line.highlight
+              span À payer
+              span#total-final 0.00 €
+
+        button.btn-primary#validate-ticket(type="button") ✅ Valider & Enregistrer
+
+    script(src="/js/script.js")
+    script.
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }

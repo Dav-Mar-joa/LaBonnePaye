@@ -1,0 +1,59 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap")
+    link(rel="stylesheet", href="/css/styles.css")
+    link(rel="manifest", href="/manifest.json")
+  body
+    h1 La Bonne Paye
+    .container
+      form(action="/payement" method="post")
+        .form-row
+          .p-qui
+            label(for="name") A payé  
+            select(name="name" id="name" style="font-size:1.5rem; text-align:center" required)
+              option(value="") 
+              option(value="Lola") Lola
+              option(value="David") David
+          .p-date
+            label(for="date") Date
+            input(type="date" id="date" name="date" style="font-size:1.5rem; text-align:center")
+
+        .form-row
+          .p-somme
+            label(for="somme") Somme
+            input(type="number" id="somme" name="somme"
+            step="0.0001" required style="font-size:1.5rem; text-align:center" placeholder="Entrez la somme :")
+        .p-description
+          label(for="description") Description
+          textarea(id="description" name="description" rows="1" style="font-size:1.5rem; text-align:center")
+
+        button(type="submit") Vazy !
+    .containerSomme 
+      .form-row
+        #p-sommeDu-lola
+          p#lola 
+      .form-row
+        #p-sommeDu-david
+          p#david  
+    button#toggle-historique(type="button" class="bouton-historique") Historique          
+    .container-historique(id="container-historique")
+      .form-row-historique
+        .p-qui
+          p.qui-historique Lola 
+          #historique-david 
+        .p-qui
+          p.qui-historique David 
+          #historique-lola
+    script(src="/js/script.js")
+    script.
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
