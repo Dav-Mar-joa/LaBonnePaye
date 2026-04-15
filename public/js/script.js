@@ -253,7 +253,7 @@ function initTicket() {
         loadBalances();
         loadHistorique();
 
-        alert(`✅ Enregistré : ${finalSomme.toFixed(2)} € pour ${name}`);
+        // alert(`✅ Enregistré : ${finalSomme.toFixed(2)} € pour ${name}`);
       })
       .catch(err => {
         console.error(err);
