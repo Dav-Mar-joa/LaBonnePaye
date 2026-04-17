@@ -386,14 +386,14 @@ select option {
 .add-line-row input[type="text"] {
   flex: 2;
   min-width: 120px;
-  font-size: max(1.2rem, 16px);
+  font-size: max(1.3rem, 16px);
   padding: 1.2rem;
 }
 
 .add-line-row input[type="number"] {
   flex: 1;
   min-width: 90px;
-  font-size: max(1.2rem, 16px);
+  font-size: max(1.3rem, 16px);
   padding: 1.2rem;
 }
 
@@ -574,7 +574,7 @@ select option {
   }
 
   input, select, textarea {
-    font-size: 16px;
+    font-size: max(1.3rem, 16px);
   }
 }
 
